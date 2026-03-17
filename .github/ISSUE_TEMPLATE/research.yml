@@ -1,0 +1,23 @@
+name: Research
+description: Gather evidence before changing policy/skill behavior.
+title: "research: "
+labels: ["type: research"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Required sources
+    validations:
+      required: false
+  - type: textarea
+    id: output
+    attributes:
+      label: Expected output
+    validations:
+      required: true

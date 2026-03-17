@@ -1,0 +1,24 @@
+name: Skill change
+description: Propose updates to an existing skill.
+title: "skill-change: "
+labels: ["type: task"]
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Skill path
+      placeholder: skills/<skill-name>/SKILL.md
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+    validations:
+      required: true

@@ -1,0 +1,25 @@
+name: Bug report
+description: Report incorrect skill behavior or governance regressions.
+title: "bug: "
+labels: ["type: bug-fix"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What failed?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: Prompt and context to reproduce.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
