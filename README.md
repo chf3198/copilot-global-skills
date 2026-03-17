@@ -11,6 +11,7 @@ This repository stores, versions, and reviews global skills that should not live
 - `skills/` — skill folders (`<skill>/SKILL.md`, references, helpers)
 - `.github/` — collaboration governance, templates, workflows
 - `scripts/` — local install/sync tooling
+- `docs/` — policy references and rollout guides
 
 ## Quick Start
 
@@ -23,6 +24,19 @@ This repository stores, versions, and reviews global skills that should not live
 - Open an issue first for net-new skills or major behavior changes.
 - Use PRs with evidence and rollback notes.
 - Keep skills bounded, auditable, and capability-aware.
+
+## Ticket Governance Standard
+
+Universal ticket naming and handling policy is defined by:
+
+- `skills/github-ticket-governance-standards/SKILL.md`
+- `docs/TICKET-GOVERNANCE-STANDARD.md`
+
+Repository enforcement and reporting:
+
+- `.github/workflows/issue-governance.yml`
+- `.github/workflows/ticket-governance-metrics.yml`
+- `.github/workflows/stale-ticket-hygiene.yml`
 
 ## Scope Rules
 

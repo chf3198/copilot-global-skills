@@ -1,7 +1,7 @@
 ---
 name: github-capability-resolver
 description: Resolve GitHub feature availability and policy constraints by plan, repo visibility, account type, and enabled settings before recommending governance actions.
-argument-hint: "[scope: repo|org|enterprise] [visibility: public|private|internal] [plan: free|pro|team|enterprise] [surface: repo|actions|security|projects|merge-queue]"
+argument-hint: "[scope: repo|org|enterprise] [visibility: public|private|internal] [plan: free|pro|team|enterprise] [surface: repo|actions|security|projects|merge-queue|issue-governance]"
 user-invocable: true
 disable-model-invocation: false
 ---
@@ -18,6 +18,7 @@ Prevent invalid guidance by mapping requested controls to what is actually suppo
 - Visibility: public/private/internal
 - Plan tier: free/pro/team/enterprise
 - Surface intent: rulesets, merge queue, projects, security, actions
+- Surface intent: rulesets, merge queue, projects, security, actions, issue-governance
 - Current repo/org settings where available
 
 If any required input is missing, return `NO_CHANGE` with missing artifacts.
@@ -40,7 +41,7 @@ CAPABILITY_RESOLUTION_REPORT
 scope: <repo|org|enterprise>
 visibility: <public|private|internal>
 plan: <free|pro|team|enterprise>
-surface: <repo|actions|security|projects|merge-queue>
+surface: <repo|actions|security|projects|merge-queue|issue-governance>
 
 capabilities:
 - id: <capability>
@@ -58,4 +59,4 @@ missing_evidence:
 
 ## Invocation policy
 
-Run this skill first for any governance request that includes rulesets, merge queue, security features, or organization-wide controls.
+Run this skill first for any governance request that includes rulesets, merge queue, security features, issue governance controls, or organization-wide controls.

@@ -12,6 +12,11 @@ disable-model-invocation: false
 
 Operationalize Jira-like planning/linkage behavior natively on GitHub.
 
+## Scope boundary
+
+This skill handles hierarchy/dependencies/projects automation.
+Universal ticket naming and label taxonomy policy is owned by `github-ticket-governance-standards`.
+
 ## Required controls
 
 1. Issue taxonomy: issue types + labels.

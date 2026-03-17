@@ -12,6 +12,11 @@ disable-model-invocation: false
 
 Provide one bounded operating flow that connects issue management, branching, development execution, review, and merge administration.
 
+## Scope boundary
+
+This skill executes lifecycle operations.
+Ticket naming, required field policy, and lifecycle governance rules are owned by `github-ticket-governance-standards`.
+
 ## Hard constraints
 
 1. No unbounded loops.
@@ -22,7 +27,7 @@ Provide one bounded operating flow that connects issue management, branching, de
 ## Phase protocol
 
 ### `intake`
-- Validate issue statement, acceptance criteria, and business impact.
+- Validate issue statement, acceptance criteria, and business impact against `github-ticket-governance-standards` policy.
 - Apply labels, type, priority, and milestone/iteration.
 
 ### `planning`

@@ -2,7 +2,30 @@ name: Skill change
 description: Propose updates to an existing skill.
 title: "skill-change: "
 labels: ["type: task"]
+type: task
 body:
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - priority: p1
+        - priority: p2
+        - priority: p3
+    validations:
+      required: true
+  - type: checkboxes
+    id: area
+    attributes:
+      label: Area labels to apply
+      options:
+        - label: area: governance
+        - label: area: security
+        - label: area: collaboration
+        - label: area: release
+        - label: area: standards
+    validations:
+      required: true
   - type: input
     id: skill
     attributes:
@@ -20,5 +43,11 @@ body:
     id: acceptance
     attributes:
       label: Acceptance criteria
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification method
     validations:
       required: true

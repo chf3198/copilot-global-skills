@@ -1,7 +1,7 @@
 ---
 name: github-ops-tree-router
 description: Route GitHub workflow requests through a capability-first GitHub skill tree with explicit ownership boundaries and minimal overlap.
-argument-hint: [goal: ticket-lifecycle|agile-projects|review-merge|release-incident|repo-governance|actions-security|ruleset-architecture|process-hardening] [policy-profile: strict|standard|light]
+argument-hint: [goal: ticket-governance|ticket-lifecycle|agile-projects|review-merge|release-incident|repo-governance|actions-security|ruleset-architecture|process-hardening] [policy-profile: strict|standard|light]
 user-invocable: true
 disable-model-invocation: false
 ---
@@ -17,6 +17,9 @@ Select the correct specialized GitHub operations path with minimal overlap and v
 For goals involving rulesets, merge queue, Actions security, or plan-sensitive controls,
 run `github-capability-resolver` first.
 
+For ticket governance goals involving issue types/fields or org-wide planning controls,
+run `github-capability-resolver` first.
+
 If capability status is `not-supported` or evidence is incomplete, return `NO_CHANGE`.
 
 ## Ownership model
@@ -25,6 +28,7 @@ If capability status is `not-supported` or evidence is incomplete, return `NO_CH
 - Policy catalog owner: `github-ops-excellence`
 - Delegates:
   - `github-capability-resolver`
+  - `github-ticket-governance-standards`
   - `github-ticket-lifecycle-orchestrator`
   - `github-projects-agile-linkage`
   - `github-review-merge-admin`
@@ -36,6 +40,7 @@ If capability status is `not-supported` or evidence is incomplete, return `NO_CH
 
 ## Routing table
 
+- `goal=ticket-governance` -> `github-capability-resolver` + `github-ticket-governance-standards`
 - `goal=ticket-lifecycle` -> `github-ticket-lifecycle-orchestrator` (+ `github-ops-excellence` for policy profile)
 - `goal=agile-projects` -> `github-projects-agile-linkage`
 - `goal=review-merge` -> `github-capability-resolver` + `github-review-merge-admin`
@@ -56,7 +61,7 @@ If capability status is `not-supported` or evidence is incomplete, return `NO_CH
 
 ```text
 GITHUB_OPS_ROUTER_REPORT
-goal: <ticket-lifecycle|agile-projects|review-merge|release-incident|repo-governance|actions-security|ruleset-architecture|process-hardening>
+goal: <ticket-governance|ticket-lifecycle|agile-projects|review-merge|release-incident|repo-governance|actions-security|ruleset-architecture|process-hardening>
 policy_profile: <strict|standard|light>
 capability_resolution:
 - required: <yes|no>

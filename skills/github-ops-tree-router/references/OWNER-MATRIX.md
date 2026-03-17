@@ -13,7 +13,11 @@
 ## Capability gate owner
 - `github-capability-resolver`: validates supportability by plan/visibility/owner/settings before execution.
 
+## Ticket policy owner
+- `github-ticket-governance-standards`: canonical naming, intake, labeling, lifecycle-state, closeout-evidence, and aging/escalation policy.
+
 ## Delegated specialists
+- `github-ticket-governance-standards`: universal ticket naming + handling standards.
 - `github-ticket-lifecycle-orchestrator`: intake→closeout lifecycle phases.
 - `github-projects-agile-linkage`: issue types, sub-issues, dependencies, projects automations.
 - `github-review-merge-admin`: review/check/ruleset/merge queue readiness.
@@ -30,3 +34,4 @@ Execution remains with specialist skill owners.
 Routing overlap is not allowed:
 - Use `repo-standards-router` for standards branch selection.
 - Use `github-ops-tree-router` for GitHub workflow lifecycle/review/release/security/ruleset operations.
+- Use `github-ticket-governance-standards` for policy; lifecycle/agile skills execute implementation.

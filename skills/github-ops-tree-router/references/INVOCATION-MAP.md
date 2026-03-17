@@ -6,10 +6,17 @@
 	- `/github-ops-tree-router goal=<ticket-lifecycle|review-merge|release-incident|actions-security|ruleset-architecture|repo-governance> policy-profile=<...>`
 3. Execute selected specialist path from `github-ops-tree-router`.
 
+## Ticket governance baseline
+1. `/github-capability-resolver scope=<repo|org> surface=issue-governance`
+2. `/github-ops-tree-router goal=ticket-governance policy-profile=standard`
+3. `/github-ticket-governance-standards mode=audit|apply`
+
 ## Ticket kickoff
-1. `/github-ops-tree-router goal=ticket-lifecycle policy-profile=standard`
-2. `/github-ticket-lifecycle-orchestrator phase=intake`
-3. `/github-ops-excellence mode=triage` (policy overlay)
+1. `/github-ops-tree-router goal=ticket-governance policy-profile=standard`
+2. `/github-ticket-governance-standards mode=enforce`
+3. `/github-ops-tree-router goal=ticket-lifecycle policy-profile=standard`
+4. `/github-ticket-lifecycle-orchestrator phase=intake`
+5. `/github-ops-excellence mode=triage` (policy overlay)
 
 ## Agile planning
 1. `/github-projects-agile-linkage mode=plan`

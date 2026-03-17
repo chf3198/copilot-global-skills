@@ -71,9 +71,22 @@ This ensures deterministic manager -> collaborator -> reviewer/admin handoff.
 4. De-overlap `repo-standards-router` from GitHub workflow routing (Phase 3 complete).
 5. Validate on one public and one private repository.
 
+## Ticket governance expansion (completed)
+
+1. Add `github-ticket-governance-standards` as ticket policy owner.
+2. Wire `goal=ticket-governance` in `github-ops-tree-router`.
+3. Expand `github-capability-resolver` with `surface=issue-governance`.
+4. Enforce title + label taxonomy with issue workflow checks.
+5. Add weekly compliance metrics workflow.
+6. Publish universal standard and pilot/promote checklist.
+
 ## Phase 3 artifacts
 
 - `repo-standards-router/SKILL.md` scope boundary + handoff protocol
 - `references/OWNER-MATRIX.md` cross-router ownership split
 - `references/INVOCATION-MAP.md` cross-router handoff sequence
 - `references/PHASE-3-DEOVERLAP-MIGRATION.md` migration checklist
+- `skills/github-ticket-governance-standards/SKILL.md` ticket policy owner
+- `.github/workflows/issue-governance.yml` issue naming/taxonomy enforcement
+- `.github/workflows/ticket-governance-metrics.yml` compliance trend reporting
+- `docs/TICKET-GOVERNANCE-STANDARD.md` universal policy + rollout checklist

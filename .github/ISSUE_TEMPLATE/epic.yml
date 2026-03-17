@@ -2,7 +2,30 @@ name: Epic
 description: Large cross-skill initiative.
 title: "epic: "
 labels: ["type: epic"]
+type: feature
 body:
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - priority: p1
+        - priority: p2
+        - priority: p3
+    validations:
+      required: true
+  - type: checkboxes
+    id: area
+    attributes:
+      label: Area labels to apply
+      options:
+        - label: area: governance
+        - label: area: security
+        - label: area: collaboration
+        - label: area: release
+        - label: area: standards
+    validations:
+      required: true
   - type: textarea
     id: objective
     attributes:
@@ -19,5 +42,11 @@ body:
     id: milestones
     attributes:
       label: Milestones
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification method
     validations:
       required: true

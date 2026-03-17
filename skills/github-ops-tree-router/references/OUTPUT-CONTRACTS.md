@@ -7,6 +7,7 @@ Every GitHub ops skill report must include:
 3. Ordered actions with owner/executor + objective verification gate
 4. Decision (`apply|defer|NO_CHANGE`)
 5. Missing evidence list
+6. Policy compliance metrics when mode is ticket-governance
 
 For plan/feature-sensitive flows, also include capability status from `github-capability-resolver`:
 
@@ -43,3 +44,9 @@ missing_evidence:
 ```
 
 No skill may claim merge/release/closeout success without objective verification evidence.
+
+Ticket governance reports must include at minimum:
+- title compliance rate
+- required field completion rate
+- label taxonomy compliance rate
+- PR linkage closure compliance rate

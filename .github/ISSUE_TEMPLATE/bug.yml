@@ -2,7 +2,35 @@ name: Bug report
 description: Report incorrect skill behavior or governance regressions.
 title: "bug: "
 labels: ["type: bug-fix"]
+type: bug
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Follow universal naming and intake standards.
+        Required title format: `bug: <symptom or regression>`.
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - priority: p1
+        - priority: p2
+        - priority: p3
+    validations:
+      required: true
+  - type: checkboxes
+    id: area
+    attributes:
+      label: Area labels to apply
+      options:
+        - label: area: governance
+        - label: area: security
+        - label: area: collaboration
+        - label: area: release
+        - label: area: standards
+    validations:
+      required: true
   - type: textarea
     id: problem
     attributes:
@@ -21,5 +49,12 @@ body:
     id: expected
     attributes:
       label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification method
+      description: How will we confirm the fix is complete?
     validations:
       required: true
