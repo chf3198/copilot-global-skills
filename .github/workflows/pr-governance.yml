@@ -60,14 +60,11 @@ jobs:
               'priority: low',
           }
           domain_labels = {
-              'policy',
-              'psi',
-              'cgroup',
-              'oom',
-              'crostini',
-              'testing',
-              'performance',
-              'research',
+              'area: governance',
+              'area: security',
+              'area: collaboration',
+              'area: release',
+              'area: standards',
           }
 
           errors = []
@@ -92,7 +89,7 @@ jobs:
           if not (labels & domain_labels):
               errors.append(
                   'At least one domain label is required: '
-                  'policy|psi|cgroup|oom|crostini|testing|performance|research.'
+                  'area: governance|security|collaboration|release|standards.'
               )
 
           linkage_re = re.compile(
